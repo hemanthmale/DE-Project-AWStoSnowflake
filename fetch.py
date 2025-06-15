@@ -11,9 +11,14 @@ table = dynamodb.Table("weather_tb")
 
 def get_weather_data(city):  
     api_url = "http://api.weatherapi.com/v1/current.json"
+
+    with open("api_key.txt") as f:
+        api_key = f.read().strip()
+
+
     params = {  
         "q": city,    
-        "key": "09ce1d08815046cc8d860851251506"
+        "key": api_key
     }  
     response = requests.get(api_url, params=params)  
     data = response.json()  
