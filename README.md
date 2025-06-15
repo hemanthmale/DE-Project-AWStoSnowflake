@@ -54,4 +54,4 @@ Tools & Technologies Used
  Amazon S3
  Snowflake & Snowpipe
  Python (Boto3, Requests)
- Weather API (OpenWeatherMap / similar)
+ Weather API (weatherapi.com)
