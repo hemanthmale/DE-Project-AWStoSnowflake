@@ -21,8 +21,8 @@ create or replace storage integration s3_int
   type = external_stage
   storage_provider = s3
   enabled = true
-  storage_aws_role_arn = 'arn:aws:iam::381491882wer:role/AWS2Snowflake'
-  storage_allowed_locations = ('s3://de-project-hemanth/snowflake/');
+  storage_aws_role_arn = AWS_ACCESS_KEY_ID
+  storage_allowed_locations = Bucket_url;
 
   
 --Describe integration object to fetch external_id and to be used in s3
@@ -36,7 +36,7 @@ create or replace file format csv_format
                     empty_field_as_null = true;
                     
 create or replace stage ext_csv_stage
-  URL = 's3://de-project-hemanth/snowflake/'
+  URL = Bucket_url
   STORAGE_INTEGRATION = s3_int
   file_format = csv_format;
 
